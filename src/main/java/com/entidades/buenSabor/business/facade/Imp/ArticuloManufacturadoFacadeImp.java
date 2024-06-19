@@ -49,6 +49,7 @@ public class ArticuloManufacturadoFacadeImp extends BaseFacadeImp<ArticuloManufa
     }
 
 
+
     @Override
     public ResponseEntity<List<Map<String, Object>>> getAllImagesByArticuloId(Long id) {
         return articuloManufacturadoService.getAllImagesByArticuloId(id);

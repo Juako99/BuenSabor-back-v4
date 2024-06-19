@@ -41,6 +41,7 @@ public class ArticuloManufacturadoServiceImp extends BaseServiceImp<ArticuloManu
         return getById(id).getArticuloManufacturadoDetalles().stream().toList();
     }
 
+    //delete lógico...
     @Override
     public void changeHabilitado(Long id) {
         var articulo = getById(id);
@@ -48,11 +49,13 @@ public class ArticuloManufacturadoServiceImp extends BaseServiceImp<ArticuloManu
         baseRepository.save(articulo);
     }
 
+    //trae todos los manufacturados habilitados
     @Override
     public List<ArticuloManufacturado> getAllHabilitados() {
         return articuloManufacturadoRepository.findByEliminadoFalseAndHabilitadoTrue();
     }
 
+    //borrado lógico cambiando la habilitacion
     @Override
     public void deleteById(Long id) throws RestrictDeleteException {
         var articulo = getById(id);
